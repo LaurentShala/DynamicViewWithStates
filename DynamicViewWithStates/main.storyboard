@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xuF-LD-ftf">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="Uix-WT-dEQ">
+            <objects>
+                <viewController id="xuF-LD-ftf" customClass="ViewController" customModule="DynamicViewWithStates" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Oh8-g1-mG7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4X2-pe-0cG" customClass="CustomView" customModule="DynamicViewWithStates" customModuleProvider="target">
+                                <rect key="frame" x="151" y="310.5" width="73" height="45"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Rto-AP-zgF">
+                                        <rect key="frame" x="0.0" y="0.0" width="73" height="45"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGt-VA-7Pj">
+                                                <rect key="frame" x="0.0" y="0.0" width="73" height="20.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C7y-xk-qUJ">
+                                                <rect key="frame" x="0.0" y="24.5" width="73" height="20.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Rto-AP-zgF" firstAttribute="top" secondItem="4X2-pe-0cG" secondAttribute="top" id="TyK-4B-Wmd"/>
+                                    <constraint firstAttribute="bottom" secondItem="Rto-AP-zgF" secondAttribute="bottom" id="h1x-Qq-AnL"/>
+                                    <constraint firstAttribute="trailing" secondItem="Rto-AP-zgF" secondAttribute="trailing" id="mrx-AK-PZR"/>
+                                    <constraint firstItem="Rto-AP-zgF" firstAttribute="leading" secondItem="4X2-pe-0cG" secondAttribute="leading" id="pUR-KU-eEK"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="subTitleLabel" destination="C7y-xk-qUJ" id="P3A-sO-YjA"/>
+                                    <outlet property="titleLabel" destination="IGt-VA-7Pj" id="joE-1q-Qla"/>
+                                </connections>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="tb2-OI-RPN">
+                                <rect key="frame" x="151" y="232" width="73" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5r-CT-niy">
+                                        <rect key="frame" x="0.0" y="0.0" width="73" height="30"/>
+                                        <state key="normal" title="Scenario 1"/>
+                                        <connections>
+                                            <action selector="didTapScenario1:" destination="xuF-LD-ftf" eventType="touchUpInside" id="VUl-6Y-d66"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PK2-uJ-WXw">
+                                        <rect key="frame" x="0.0" y="30" width="73" height="30"/>
+                                        <state key="normal" title="Scenario 2"/>
+                                        <connections>
+                                            <action selector="didTapScenario2:" destination="xuF-LD-ftf" eventType="touchUpInside" id="PnI-Gz-FnP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4X2-pe-0cG" firstAttribute="centerX" secondItem="Oh8-g1-mG7" secondAttribute="centerX" id="Fld-So-ryp"/>
+                            <constraint firstItem="tb2-OI-RPN" firstAttribute="leading" secondItem="4X2-pe-0cG" secondAttribute="leading" id="Lb3-Gj-1AP"/>
+                            <constraint firstItem="4X2-pe-0cG" firstAttribute="top" secondItem="tb2-OI-RPN" secondAttribute="bottom" constant="18.5" id="LrE-WX-5Zn"/>
+                            <constraint firstItem="4X2-pe-0cG" firstAttribute="centerY" secondItem="Oh8-g1-mG7" secondAttribute="centerY" id="dE3-jU-o2Z"/>
+                            <constraint firstItem="tb2-OI-RPN" firstAttribute="trailing" secondItem="4X2-pe-0cG" secondAttribute="trailing" id="sr0-rZ-nhH"/>
+                            <constraint firstItem="4X2-pe-0cG" firstAttribute="width" relation="lessThanOrEqual" secondItem="Oh8-g1-mG7" secondAttribute="width" id="wT4-Nx-hdU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ytF-ga-01c"/>
+                    </view>
+                    <connections>
+                        <outlet property="customView" destination="4X2-pe-0cG" id="3aS-jf-Eh0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RWO-AC-oC5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-415.19999999999999" y="66.11694152923539"/>
+        </scene>
+    </scenes>
+</document>
